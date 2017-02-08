@@ -1,6 +1,6 @@
 # GB2260.java #
 
-中华人民共和国国家标准 GB/T 2260 行政区划代码，数据库Java版实现。
+中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。
 
 对项目 [https://github.com/cn/GB2260.java](https://github.com/cn/GB2260.java) 的重新实现。
 
