@@ -18,6 +18,10 @@ The Java implementation for looking up Chinese administrative divisions.
 
 [中华人民共和国国家统计局 > 行政区划代码](http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/)
 
+## 英文命名参考 ##
+
+[中国各级行政区划的英文表达](http://www.24en.com/column/Khubilai/2010-08-31/119131.html)
+
 ## Usage ##
 
 ```
