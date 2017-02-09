@@ -35,4 +35,5 @@ ext {
     allLicenses = ["MIT"]
 }
 
+apply from: 'https://raw.githubusercontent.com/TakWolf/JCenter-Publish-Script/master/install.gradle'
 apply from: 'https://raw.githubusercontent.com/TakWolf/JCenter-Publish-Script/master/bintray.gradle'
