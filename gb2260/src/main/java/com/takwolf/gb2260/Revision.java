@@ -2,6 +2,8 @@ package com.takwolf.gb2260;
 
 public enum Revision {
 
+    V201609("201609"),
+
     V201610("201610"),
 
     V201611("201611");
