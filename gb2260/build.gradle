@@ -4,6 +4,8 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    compile 'org.apache.commons:commons-lang3:3.5'
+    testCompile 'junit:junit:4.11'
 }
 
 tasks.withType(JavaCompile) {
