@@ -2,6 +2,8 @@ package com.takwolf.gb2260;
 
 public enum Revision {
 
+    V201610("201610"),
+
     V201611("201611");
 
     public static final Revision LATEST = V201611;
