@@ -1,4 +1,15 @@
 
+buildscript {
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
+    }
+}
+
 allprojects {
     repositories {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }

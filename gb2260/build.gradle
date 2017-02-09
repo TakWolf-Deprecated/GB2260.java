@@ -11,3 +11,28 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'GB2260'
+
+    siteUrl = 'https://github.com/TakWolf/GB2260.java'
+    gitUrl = 'https://github.com/TakWolf/GB2260.java.git'
+
+    groupId = 'com.takwolf'
+    artifactId = 'gb2260'
+
+    libraryName = 'GB2260'
+    libraryVersion = '0.0.1'
+    libraryDescription = 'The Java implementation for looking up Chinese administrative divisions.'
+
+    developerId = 'TakWolf'
+    developerName = 'TakWolf'
+    developerEmail = 'takwolf@foxmail.com'
+
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
+apply from: 'https://raw.githubusercontent.com/TakWolf/JCenter-Publish-Script/master/bintray.gradle'
