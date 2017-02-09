@@ -1,5 +1,9 @@
 # GB2260.java #
 
+[![Build Status](https://travis-ci.org/TakWolf/GB2260.java.svg?branch=master)](https://travis-ci.org/TakWolf/GB2260.java)
+[![Download](https://api.bintray.com/packages/takwolf/maven/GB2260/images/download.svg)](https://bintray.com/takwolf/maven/GB2260/_latestVersion)
+[![License](https://img.shields.io/github/license/TakWolf/GB2260.java.svg?style=flat)](https://opensource.org/licenses/MIT)
+
 The Java implementation for looking up Chinese administrative divisions.
 
 中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。
