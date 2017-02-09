@@ -8,7 +8,7 @@ The Java implementation for looking up Chinese administrative divisions.
 
 中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。
 
-对项目 [https://github.com/cn/GB2260.java](https://github.com/cn/GB2260.java) 的重新实现。
+该项目是对项目 [https://github.com/cn/GB2260.java](https://github.com/cn/GB2260.java) 的重新实现。
 
 其他语言实现，请参考：[https://github.com/cn/GB2260](https://github.com/cn/GB2260)
 
