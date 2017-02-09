@@ -14,7 +14,7 @@ tasks.withType(JavaCompile) {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'GB2260'
+    bintrayName = 'GB2260.java'
 
     siteUrl = 'https://github.com/TakWolf/GB2260.java'
     gitUrl = 'https://github.com/TakWolf/GB2260.java.git'
@@ -22,7 +22,7 @@ ext {
     groupId = 'com.takwolf'
     artifactId = 'gb2260'
 
-    libraryName = 'GB2260'
+    libraryName = 'GB2260.java'
     libraryVersion = '0.0.1'
     libraryDescription = 'The Java implementation for looking up Chinese administrative divisions.'
 
