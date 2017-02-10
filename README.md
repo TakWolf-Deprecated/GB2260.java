@@ -6,7 +6,7 @@
 
 The Java implementation for looking up Chinese administrative divisions.
 
-中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。
+中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。支持省市县三级。
 
 该项目是对项目 [https://github.com/cn/GB2260.java](https://github.com/cn/GB2260.java) 的重新实现。
 
@@ -24,6 +24,8 @@ The Java implementation for looking up Chinese administrative divisions.
 
 ## Usage ##
 
+### Gradle ###
+
 ```
 dependencies {
     compile 'com.takwolf:gb2260:0.0.1'
@@ -32,6 +34,15 @@ dependencies {
 repositories {
     jcenter()
 }
+```
+
+### Java ###
+
+```
+GB2260 gb2260 = new GB2260(); // 建议静态单例模式
+
+Division division = gb2260.getDivision("110000");
+System.out.println(division.getName()); // 北京市
 ```
 
 ## Author ##

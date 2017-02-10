@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class GB2260Test201611 {
 
-    private static final GB2260 gb2260 = new GB2260();
+    private static final GB2260 gb2260 = new GB2260(Revision.V201611);
 
     @Test
     public void test110000() {
