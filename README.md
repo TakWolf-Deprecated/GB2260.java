@@ -1,18 +1,30 @@
 # GB2260.java #
 
-中华人民共和国国家标准 GB/T 2260 行政区划代码，数据库Java版实现。
+[![Build Status](https://travis-ci.org/TakWolf/GB2260.java.svg?branch=master)](https://travis-ci.org/TakWolf/GB2260.java)
+[![Download](https://api.bintray.com/packages/takwolf/maven/GB2260/images/download.svg)](https://bintray.com/takwolf/maven/GB2260/_latestVersion)
+[![License](https://img.shields.io/github/license/TakWolf/GB2260.java.svg?style=flat)](https://opensource.org/licenses/MIT)
 
-对项目 [https://github.com/cn/GB2260.java](https://github.com/cn/GB2260.java) 的重新实现。
+The Java implementation for looking up Chinese administrative divisions.
+
+中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。支持省市县三级。
+
+该项目是对项目 [https://github.com/cn/GB2260.java](https://github.com/cn/GB2260.java) 的重新实现。
 
 其他语言实现，请参考：[https://github.com/cn/GB2260](https://github.com/cn/GB2260)
 
 ## 数据来源 ##
 
-[中华人民共和国国家统计局 > 行政区划代码](http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/)
-
 [中华人民共和国民政部 > 中华人民共和国行政区划代码](http://www.mca.gov.cn/article/sj/tjbz/a/)
 
+[中华人民共和国国家统计局 > 行政区划代码](http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/)
+
+## 英文命名参考 ##
+
+[中国各级行政区划的英文表达](http://www.24en.com/column/Khubilai/2010-08-31/119131.html)
+
 ## Usage ##
+
+### Gradle ###
 
 ```
 dependencies {
@@ -22,6 +34,15 @@ dependencies {
 repositories {
     jcenter()
 }
+```
+
+### Java ###
+
+```
+GB2260 gb2260 = new GB2260(); // 建议静态单例模式
+
+Division division = gb2260.getDivision("110000");
+System.out.println(division.getName()); // 北京市
 ```
 
 ## Author ##
