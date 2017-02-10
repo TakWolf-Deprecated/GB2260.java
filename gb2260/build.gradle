@@ -1,7 +1,12 @@
 apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+group 'com.takwolf'
+version '0.0.7'
 
 dependencies {
     compile 'org.apache.commons:commons-lang3:3.5'
@@ -12,28 +17,37 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'GB2260.java'
-
-    siteUrl = 'https://github.com/TakWolf/GB2260.java'
-    gitUrl = 'https://github.com/TakWolf/GB2260.java.git'
-
-    groupId = 'com.takwolf'
-    artifactId = 'gb2260'
-
-    libraryName = 'GB2260.java'
-    libraryVersion = '0.0.1'
-    libraryDescription = 'The Java implementation for looking up Chinese administrative divisions.'
-
-    developerId = 'TakWolf'
-    developerName = 'TakWolf'
-    developerEmail = 'takwolf@foxmail.com'
-
-    licenseName = 'The MIT License'
-    licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ["MIT"]
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
 }
 
-apply from: 'https://raw.githubusercontent.com/TakWolf/JCenter-Publish-Script/master/install.gradle'
-apply from: 'https://raw.githubusercontent.com/TakWolf/JCenter-Publish-Script/master/bintray.gradle'
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    configurations = ['archives']
+    publish = true
+    pkg {
+        repo = 'maven'
+        name = 'GB2260.java'
+        desc = 'The Java implementation for looking up Chinese administrative divisions.'
+        websiteUrl = 'https://github.com/TakWolf/GB2260.java'
+        issueTrackerUrl = 'https://github.com/TakWolf/GB2260.java/issues'
+        vcsUrl = 'https://github.com/TakWolf/GB2260.java.git'
+        licenses = ['MIT']
+        labels = ['gb2260']
+        publicDownloadNumbers = true
+        githubRepo = 'TakWolf/GB2260.java'
+        githubReleaseNotesFile = 'README.md'
+    }
+}
