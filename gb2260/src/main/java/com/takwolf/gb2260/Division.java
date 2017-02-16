@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 /**
  * 五级划分对应的英文分别为：
- * 省 Province，市 Prefecture，县 County，乡 Township，村 village
+ * 省 Province，市 Prefecture，县 County，乡 Township，村 Village
  */
 public final class Division {
 
