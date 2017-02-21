@@ -7,7 +7,7 @@
 .mtj.tmp/
 
 # Package Files #
-# *.jar
+*.jar
 *.war
 *.ear
 
@@ -149,17 +149,3 @@ $RECYCLE.BIN/
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
-
-
-
-
-
-
-
-
-### Self ###
-*.log
-application.properties
-application.yaml
-classes/
-temp/
