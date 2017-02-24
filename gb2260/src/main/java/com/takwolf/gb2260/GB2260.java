@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public final class GB2260 {
 
@@ -34,7 +35,16 @@ public final class GB2260 {
                 // 按照两段解析
                 if (StringUtils.isNotBlank(line)) {
                     String[] array = line.split(" ");
-                    Division division = new Division(this, array[0], array[1]);
+                    String code = array[0];
+                    String name = array[1];
+                    Division division;
+                    if (Pattern.matches("^\\d{2}0{4}$", code)) {
+                        division = new Province(this, code, name);
+                    } else if (Pattern.matches("^\\d{4}0{2}$", code)) {
+                        division = new Prefecture(this, code, name);
+                    } else {
+                        division = new County(this, code, name);
+                    }
                     divisionMap.put(division.getCode(), division);
                 }
             }
