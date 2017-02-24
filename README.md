@@ -4,7 +4,11 @@
 [![Download](https://api.bintray.com/packages/takwolf/maven/GB2260.java/images/download.svg)](https://bintray.com/takwolf/maven/GB2260.java/_latestVersion)
 [![License](https://img.shields.io/github/license/TakWolf/GB2260.java.svg?style=flat)](https://opensource.org/licenses/MIT)
 
+**Warning: this library breaks every five minutes for the moment.**
+
 The Java implementation for looking up Chinese administrative divisions.
+
+**注意：当前仍然是一个开发版本，以至于 API 可能会有破坏性的变动。**
 
 中华人民共和国行政区划代码（GB/T 2260），数据库Java版实现。支持省市县三级。
 
