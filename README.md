@@ -28,7 +28,7 @@ The Java implementation for looking up Chinese administrative divisions.
 
 ```
 dependencies {
-    compile 'com.takwolf:gb2260:0.0.1'
+    compile 'com.takwolf:gb2260:0.0.2'
 }
 
 repositories {
@@ -41,8 +41,12 @@ repositories {
 ```
 GB2260 gb2260 = new GB2260(); // 建议静态单例模式
 
-Division division = gb2260.getDivision("110000");
-System.out.println(division.getName()); // 北京市
+Division beijing = gb2260.getDivision("110000");
+System.out.println(beijing.getName()); // 北京市
+
+Division hepingqu = gb2260.getDivision("210102"); // 和平区
+Division shenyang = hepingqu.getPrefecture(); // 沈阳市
+Division liaoning = hepingqu.getProvince(); // 辽宁省
 ```
 
 ## Author ##
