@@ -9,7 +9,23 @@ import java.util.regex.Pattern;
 public final class Division {
 
     public enum Level {
-        PROVINCE, PREFECTURE, COUNTY
+
+        PROVINCE(1),
+
+        PREFECTURE(2),
+
+        COUNTY(3);
+
+        private final int value;
+
+        Level(int value) {
+            this.value = value;
+        }
+
+        protected int getValue() {
+            return value;
+        }
+
     }
 
     private final GB2260 gb2260;
@@ -56,6 +72,33 @@ public final class Division {
 
     public boolean isCounty() {
         return level == Level.COUNTY;
+    }
+
+    public Division getProvince() {
+        if (level.getValue() > Level.PROVINCE.getValue()) {
+            return gb2260.getDivision(code.substring(0, 2) + "0000");
+        } else {
+            return null;
+        }
+    }
+
+    public Division getPrefecture() {
+        if (level.getValue() > Level.PREFECTURE.getValue()) {
+            return gb2260.getDivision(code.substring(0, 4) + "00");
+        } else {
+            return null;
+        }
+    }
+
+    public Division getParent() {
+        switch (level) {
+            case COUNTY:
+                return getPrefecture();
+            case PREFECTURE:
+                return getProvince();
+            default:
+                return null;
+        }
     }
 
 }
