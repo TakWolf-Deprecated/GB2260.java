@@ -40,7 +40,7 @@ public final class GB2260 {
             }
             reader.close();
         } catch (IOException e) {
-            throw new AssertionError("GB2260 database init error.");
+            throw new AssertionError("GB2260 database for revision '" + revision.getCode() + "' init error.", e);
         }
     }
 

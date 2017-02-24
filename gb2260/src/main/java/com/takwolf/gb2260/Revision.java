@@ -21,6 +21,10 @@ public enum Revision {
         this.code = code;
     }
 
+    public String getCode() {
+        return code;
+    }
+
     protected String getDbPath() {
         return "/gb2260/" + code + ".txt";
     }
