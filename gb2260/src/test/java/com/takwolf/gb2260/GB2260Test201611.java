@@ -19,4 +19,13 @@ public class GB2260Test201611 {
         gb2260.getDivision("000000");
     }
 
+    @Test
+    public void testParent() {
+        Division liaoning = gb2260.getDivision("210000"); // 辽宁
+        Division shenyang = gb2260.getDivision("210100"); // 沈阳
+        Division hepingqu = gb2260.getDivision("210102"); // 和平区
+        Assert.assertEquals(liaoning, hepingqu.getProvince());
+        Assert.assertEquals(shenyang, hepingqu.getPrefecture());
+    }
+
 }
