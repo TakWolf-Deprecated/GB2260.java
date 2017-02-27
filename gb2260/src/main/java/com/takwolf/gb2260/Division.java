@@ -3,7 +3,7 @@ package com.takwolf.gb2260;
 /**
  * 行政区划
  */
-public abstract class Division {
+public abstract class Division implements Comparable<Division> {
 
     private final GB2260 gb2260;
     private final String code;
@@ -29,6 +29,11 @@ public abstract class Division {
 
     public Revision getRevision() {
         return gb2260.getRevision();
+    }
+
+    @Override
+    public final int compareTo(Division o) {
+        return getCode().compareTo(o.getCode());
     }
 
 }

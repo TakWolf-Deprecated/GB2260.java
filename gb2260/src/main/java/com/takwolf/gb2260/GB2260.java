@@ -6,8 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public final class GB2260 {
@@ -59,11 +58,56 @@ public final class GB2260 {
     }
 
     public Division getDivision(String code) {
-        if (divisionMap.containsKey(code)) {
-            return divisionMap.get(code);
-        } else {
-            throw new IllegalArgumentException("Invalid division code.");
+        AssertUtils.checkDivisionCode(code);
+        return divisionMap.get(code);
+    }
+
+    private <T extends Division> List<T> findDivisionsWithType(String codePrefix, Class<T> clz) {
+        AssertUtils.checkDivisionCodePrefix(codePrefix);
+        List<T> list = new ArrayList<>();
+        for (String code : divisionMap.keySet()) {
+            if (StringUtils.startsWith(code, codePrefix)) {
+                Division division = divisionMap.get(code);
+                if (division.getClass() == clz) {
+                    //noinspection unchecked
+                    list.add((T) division);
+                }
+            }
         }
+        Collections.sort(list);
+        return list;
+    }
+
+    public List<Division> findDivisions(String codePrefix) {
+        return findDivisionsWithType(codePrefix, Division.class);
+    }
+
+    public List<Province> findProvinces(String codePrefix) {
+        return findDivisionsWithType(codePrefix, Province.class);
+    }
+
+    public List<Prefecture> findPrefectures(String codePrefix) {
+        return findDivisionsWithType(codePrefix, Prefecture.class);
+    }
+
+    public List<County> findCounties(String codePrefix) {
+        return findDivisionsWithType(codePrefix, County.class);
+    }
+
+    public List<Division> getDivisions() {
+        return findDivisions("");
+    }
+
+    public List<Province> getProvinces() {
+        return findProvinces("");
+    }
+
+    public List<Prefecture> getPrefectures() {
+        return findPrefectures("");
+    }
+
+    public List<County> getCounties() {
+        return findCounties("");
     }
 
 }
