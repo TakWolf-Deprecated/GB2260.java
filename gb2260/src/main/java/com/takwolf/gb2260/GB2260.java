@@ -58,24 +58,30 @@ public final class GB2260 {
     }
 
     public Division getDivision(String code) {
-        AssertUtils.checkDivisionCode(code);
-        return divisionMap.get(code);
+        if (!StringUtils.isNumeric(code) || StringUtils.length(code) != 6) {
+            throw new IllegalArgumentException("Invalid division code format.");
+        } else {
+            return divisionMap.get(code);
+        }
     }
 
     private <T extends Division> List<T> findDivisionsWithType(String codePrefix, Class<T> clz) {
-        AssertUtils.checkDivisionCodePrefix(codePrefix);
-        List<T> list = new ArrayList<>();
-        for (String code : divisionMap.keySet()) {
-            if (StringUtils.startsWith(code, codePrefix)) {
-                Division division = divisionMap.get(code);
-                if (division.getClass() == clz) {
-                    //noinspection unchecked
-                    list.add((T) division);
+        if (!StringUtils.isNumeric(codePrefix) || StringUtils.length(codePrefix) > 6) {
+            throw new IllegalArgumentException("Invalid division code prefix format.");
+        } else {
+            List<T> list = new ArrayList<>();
+            for (String code : divisionMap.keySet()) {
+                if (StringUtils.startsWith(code, codePrefix)) {
+                    Division division = divisionMap.get(code);
+                    if (division.getClass() == clz) {
+                        //noinspection unchecked
+                        list.add((T) division);
+                    }
                 }
             }
+            Collections.sort(list);
+            return list;
         }
-        Collections.sort(list);
-        return list;
     }
 
     public List<Division> findDivisions(String codePrefix) {
@@ -94,20 +100,32 @@ public final class GB2260 {
         return findDivisionsWithType(codePrefix, County.class);
     }
 
+    private <T extends Division> List<T> getDivisionsWithType(Class<T> clz) {
+        List<T> list = new ArrayList<>();
+        for (Division division : divisionMap.values()) {
+            if (division.getClass() == clz) {
+                //noinspection unchecked
+                list.add((T) division);
+            }
+        }
+        Collections.sort(list);
+        return list;
+    }
+
     public List<Division> getDivisions() {
-        return findDivisions("");
+        return getDivisionsWithType(Division.class);
     }
 
     public List<Province> getProvinces() {
-        return findProvinces("");
+        return getDivisionsWithType(Province.class);
     }
 
     public List<Prefecture> getPrefectures() {
-        return findPrefectures("");
+        return getDivisionsWithType(Prefecture.class);
     }
 
     public List<County> getCounties() {
-        return findCounties("");
+        return getDivisionsWithType(County.class);
     }
 
 }
