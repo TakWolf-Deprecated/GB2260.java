@@ -9,4 +9,12 @@ public final class County extends Division {
         super(gb2260, code, name);
     }
 
+    public Province getProvince() {
+        return (Province) getGB2260().getDivision(getProvinceCodePrefix());
+    }
+
+    public Prefecture getPrefecture() {
+        return (Prefecture) getGB2260().getDivision(getPrefectureCodePrefix());
+    }
+
 }

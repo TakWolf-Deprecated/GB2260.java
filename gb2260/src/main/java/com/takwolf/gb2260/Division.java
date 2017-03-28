@@ -15,12 +15,20 @@ public abstract class Division implements Comparable<Division> {
         this.name = name;
     }
 
-    protected GB2260 getGb2260() {
+    protected GB2260 getGB2260() {
         return gb2260;
     }
 
     public String getCode() {
         return code;
+    }
+
+    public String getProvinceCodePrefix() {
+        return code.substring(0, 2);
+    }
+
+    public String getPrefectureCodePrefix() {
+        return code.substring(0, 4);
     }
 
     public String getName() {
