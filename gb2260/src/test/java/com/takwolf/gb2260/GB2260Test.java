@@ -14,23 +14,23 @@ public class GB2260Test {
         gb2260.getDivision("abcdef");
     }
 
-    @Test
-    public void test1() {
-        Division beijing = gb2260.getDivision("110000");
-        Assert.assertEquals(beijing.getCode(), "110000");
-        Assert.assertEquals(beijing.getName(), "北京市");
+    @Test(expected = IllegalArgumentException.class)
+    public void testInvalidCodePrefix() {
+        gb2260.findDivisions("ab");
     }
 
     @Test
-    public void test2() {
+    public void test0() {
         List<Province> provinceList = gb2260.getProvinces();
         Assert.assertEquals(provinceList.size(), 34);
     }
 
     @Test
-    public void test3() {
-        List<Province> provinceList = gb2260.findProvinces("1");
-        Assert.assertEquals(provinceList.size(), 5);
+    public void test1() {
+        Division division = gb2260.getDivision("110000");
+        Assert.assertTrue(division instanceof Province);
+        Assert.assertEquals(division.getCode(), "110000");
+        Assert.assertEquals(division.getName(), "北京市");
     }
-
+    
 }
