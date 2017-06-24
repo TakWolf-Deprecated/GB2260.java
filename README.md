@@ -30,7 +30,7 @@ The Java implementation for looking up Chinese administrative divisions.
 
 ### Gradle ###
 
-```
+``` gradle
 dependencies {
     compile 'com.takwolf:gb2260:0.0.2'
 }
@@ -42,7 +42,7 @@ repositories {
 
 ### Java ###
 
-```
+``` java
 GB2260 gb2260 = new GB2260(); // 建议静态单例模式
 
 Division beijing = gb2260.getDivision("110000");
