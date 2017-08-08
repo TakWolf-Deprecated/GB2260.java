@@ -9,8 +9,8 @@ group 'com.takwolf'
 version '0.0.2'
 
 dependencies {
-    compile 'org.apache.commons:commons-lang3:3.5'
-    testCompile 'junit:junit:4.11'
+    compile 'org.apache.commons:commons-lang3:3.6'
+    testCompile 'junit:junit:4.12'
 }
 
 tasks.withType(JavaCompile) {
