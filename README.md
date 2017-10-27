@@ -1,7 +1,7 @@
 # GB2260.java #
 
 [![Build Status](https://travis-ci.org/TakWolf/GB2260.java.svg?branch=master)](https://travis-ci.org/TakWolf/GB2260.java)
-[![Bintray](https://img.shields.io/bintray/v/takwolf/maven/GB2260.java.svg)](https://bintray.com/takwolf/maven/GB2260.java/_latestVersion)
+[![Bintray](https://api.bintray.com/packages/takwolf/maven/GB2260.java/images/download.svg)](https://bintray.com/takwolf/maven/GB2260.java/_latestVersion)
 [![License](https://img.shields.io/github/license/TakWolf/GB2260.java.svg)](https://opensource.org/licenses/MIT)
 
 **Warning: this library breaks every five minutes for the moment.**
