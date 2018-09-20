@@ -9,8 +9,8 @@ group 'com.takwolf'
 version '0.0.2'
 
 dependencies {
-    compile 'org.apache.commons:commons-lang3:3.8'
-    testCompile 'junit:junit:4.12'
+    implementation 'org.apache.commons:commons-lang3:3.8'
+    testImplementation 'junit:junit:4.12'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
