@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class GB2260Test {
+public class GB2260Tests {
 
     private static final GB2260 gb2260 = new GB2260();
 
