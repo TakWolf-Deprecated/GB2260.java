@@ -9,7 +9,7 @@ group 'com.takwolf'
 version '0.0.2'
 
 dependencies {
-    implementation 'org.apache.commons:commons-lang3:3.8'
+    implementation 'org.apache.commons:commons-lang3:3.8.1'
     testImplementation 'junit:junit:4.12'
 }
 
