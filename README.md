@@ -32,7 +32,7 @@ The Java implementation for looking up Chinese administrative divisions.
 
 ``` gradle
 dependencies {
-    compile 'com.takwolf:gb2260:0.0.2'
+    implementation 'com.takwolf:gb2260:0.0.2'
 }
 
 repositories {
