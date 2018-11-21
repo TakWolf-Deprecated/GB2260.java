@@ -20,7 +20,7 @@ The Java implementation for looking up Chinese administrative divisions.
 
 [中华人民共和国民政部 > 中华人民共和国行政区划代码](http://www.mca.gov.cn/article/sj/tjbz/a/)
 
-[中华人民共和国国家统计局 > 行政区划代码](http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/)
+[中华人民共和国国家统计局 > 行政区划代码](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/)
 
 ## 英文命名参考 ##
 
